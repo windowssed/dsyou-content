@@ -5,8 +5,6 @@ summary: "这篇文章演示博客支持的所有功能：图片、视频、代�
 tags: "演示, Markdown"
 ---
 
-import Callout from "../../components/mdx/Callout.astro";
-
 这是一篇**全功能演示文章**，展示博客支持的各种功能。所有内容都可以直接复制参考。
 
 ## 文字格式
@@ -39,7 +37,7 @@ import Callout from "../../components/mdx/Callout.astro";
 function greet(name) {
   return `你好，${name}！`;
 }
-console.log(greet("windowssed"));
+console.log(greet("shiyou"));
 ```
 
 ## 表格
@@ -64,9 +62,8 @@ $$
 
 ## 提示框
 
-<Callout emoji="💡">
-  这是一个提示框组件，可以用来突出重要信息。
-</Callout>
+> [!TIP]
+> 这是一个提示框，可以用来突出重要信息。
 
 ## 本地图片
 
