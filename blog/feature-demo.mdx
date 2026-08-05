@@ -1,0 +1,107 @@
+---
+title: "博客全功能演示"
+publishedAt: "2026-08-06"
+summary: "这篇文章演示博客支持的所有功能：图片、视频、代码、表格、数学公式、引用等。"
+tags: "演示, Markdown"
+---
+
+import Callout from "../../components/mdx/Callout.astro";
+
+这是一篇**全功能演示文章**，展示博客支持的各种功能。所有内容都可以直接复制参考。
+
+## 文字格式
+
+支持 **加粗**、*斜体*、~~删除线~~、`行内代码`，以及 [超链接](https://www.dsyou.cn)。
+
+## 列表
+
+无序列表：
+
+- 苹果
+- 香蕉
+- 橙子
+
+有序列表：
+
+1. 第一步：写好文章
+2. 第二步：推送到内容仓库
+3. 第三步：网站自动更新
+
+## 引用
+
+> 不积跬步，无以至千里；不积小流，无以成江海。
+>
+> —— 荀子
+
+## 代码块
+
+```js
+function greet(name) {
+  return `你好，${name}！`;
+}
+console.log(greet("windowssed"));
+```
+
+## 表格
+
+| 功能     | 是否支持 | 说明         |
+| -------- | -------- | ------------ |
+| 图片     | ✅       | 本地/外链均可 |
+| 视频     | ✅       | YouTube / B站 |
+| 代码高亮 | ✅       | 多种语言     |
+| 数学公式 | ✅       | KaTeX 支持   |
+| 暗黑模式 | ✅       | 一键切换     |
+
+## 数学公式
+
+行内公式：质能方程 $E = mc^2$
+
+块级公式：
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+## 提示框
+
+<Callout emoji="💡">
+  这是一个提示框组件，可以用来突出重要信息。
+</Callout>
+
+## 本地图片
+
+图片文件放在 `blog/images/` 文件夹，正文里用相对路径引用：
+
+![一张演示图片](./images/demo.jpg)
+
+## 外部图片
+
+也可以直接用网络图片链接：
+
+![来自网络的图片](https://picsum.photos/1200/800?random=1)
+
+## YouTube 视频
+
+把 `src` 里的视频 ID 换成你自己的即可：
+
+<iframe
+  src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+  title="YouTube 视频"
+  class="w-full aspect-video my-6"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+## B 站视频
+
+B 站视频也支持，把 `bvid` 换成你自己的视频号：
+
+<iframe
+  src="//player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1"
+  class="w-full aspect-video my-6"
+  scrolling="no"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen="true"
+></iframe>
