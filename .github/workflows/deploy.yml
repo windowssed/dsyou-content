@@ -12,7 +12,7 @@ jobs:
         run: |
           code=$(curl -s -o /dev/null -w "%{http_code}" -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}")
           echo "Vercel 部署触发，HTTP 状态码: $code"
-          if [ "$code" != "200" ]; then
+          if [ "$code" != "200" ] && [ "$code" != "201" ]; then
             echo "::error::Vercel 部署触发失败（状态码 $code）"
             exit 1
           fi
