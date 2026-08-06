@@ -1,0 +1,88 @@
+---
+title: "图表功能演示"
+publishedAt: "2026-08-06"
+summary: "演示博客支持的图表功能：K 线图、折线图、饼图，基于 ECharts。"
+tags: "图表, ECharts, 投资分析"
+---
+
+这篇文章演示博客的**图表功能**。用法很简单：写一个 ` ```chart ` 代码块，内容是 ECharts 的 option JSON，构建后会自动渲染成图表。
+
+## K 线图
+
+```chart
+{
+  "title": { "text": "日 K 线（示例）" },
+  "tooltip": { "trigger": "axis" },
+  "legend": { "data": ["日K"] },
+  "xAxis": { "type": "category", "data": ["2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06"] },
+  "yAxis": { "type": "value", "scale": true },
+  "dataZoom": [
+    { "type": "inside", "start": 0, "end": 100 },
+    { "type": "slider", "start": 0, "end": 100 }
+  ],
+  "series": [
+    {
+      "name": "日K",
+      "type": "candlestick",
+      "data": [
+        [3100, 3150, 3090, 3160],
+        [3150, 3130, 3110, 3170],
+        [3130, 3180, 3120, 3190],
+        [3180, 3220, 3170, 3230],
+        [3220, 3200, 3180, 3240],
+        [3200, 3250, 3190, 3260],
+        [3250, 3230, 3210, 3270],
+        [3230, 3280, 3220, 3290]
+      ]
+    }
+  ]
+}
+```
+
+## 折线图
+
+```chart
+{
+  "title": { "text": "净值走势（示例）" },
+  "tooltip": { "trigger": "axis" },
+  "legend": { "data": ["组合净值", "基准"] },
+  "grid": { "left": "3%", "right": "4%", "bottom": "3%", "containLabel": true },
+  "xAxis": { "type": "category", "data": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月"] },
+  "yAxis": { "type": "value" },
+  "series": [
+    { "name": "组合净值", "type": "line", "smooth": true, "data": [1.0, 1.04, 1.02, 1.09, 1.15, 1.12, 1.2, 1.26] },
+    { "name": "基准", "type": "line", "smooth": true, "data": [1.0, 1.01, 1.03, 1.05, 1.06, 1.08, 1.1, 1.11] }
+  ]
+}
+```
+
+## 饼图
+
+```chart
+{
+  "title": { "text": "资产配置（示例）", "left": "center" },
+  "tooltip": { "trigger": "item" },
+  "legend": { "bottom": 0 },
+  "series": [
+    {
+      "name": "资产配置",
+      "type": "pie",
+      "radius": ["40%", "65%"],
+      "center": ["50%", "45%"],
+      "data": [
+        { "value": 40, "name": "股票" },
+        { "value": 25, "name": "债券" },
+        { "value": 20, "name": "现金" },
+        { "value": 15, "name": "商品" }
+      ]
+    }
+  ]
+}
+```
+
+## 说明
+
+- 数据直接写在代码块里，方便维护
+- K 线用 `"type": "candlestick"`，数据格式为 `[开盘, 收盘, 最低, 最高]`
+- 折线用 `"type": "line"`，饼图用 `"type": "pie"`
+- 支持 `dataZoom` 缩放（K 线必备）、`legend`、`tooltip`、`grid` 等全部 ECharts 配置
