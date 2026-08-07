@@ -1,7 +1,7 @@
-# dsyou-content — shiyou 的投资笔记内容仓库
+# shiyou-content — shiyou 的投资笔记内容仓库
 
 > shiyou 的博客文章内容仓库。
-> `blog` 文件夹里的 `.mdx` 文件就是网站 **https://www.dsyou.cn** 显示的文章。网站构建时自动从这里拉取最新内容。
+> `blog` 文件夹里的 `.mdx` 文件就是网站 **https://www.dongshiyou.com** 显示的文章。网站构建时自动从这里拉取最新内容。
 
 本文件是**完整的使用文档**，面向所有读者（包括 AI 代理）。任何人读到本文档，都应能独立完成本仓库的日常维护。
 
@@ -26,13 +26,13 @@
 
 ## 仓库职责
 
-本仓库**只存放博客文章**（`.mdx` 文件）及其图片。网站主题、相册、项目、经历、配置等都不在这里，那些属于 **dsyou** 仓库。
+本仓库**只存放博客文章**（`.mdx` 文件）及其图片。网站主题、相册、项目、经历、配置等都不在这里，那些属于 **shiyou** 仓库。
 
 | 内容 | 归属仓库 |
 |---|---|
-| 博客文章（.mdx） | **本仓库**（dsyou-content） |
-| 相册 / 项目 / 经历 | dsyou |
-| 站点配置 / 主题 / 代码 | dsyou |
+| 博客文章（.mdx） | **本仓库**（shiyou-content） |
+| 相册 / 项目 / 经历 | shiyou |
+| 站点配置 / 主题 / 代码 | shiyou |
 
 > **写文章永远只改本仓库**。网站构建时 `sync-content.mjs` 会自动拉取 `blog/` 内容并转换为网站格式。
 
@@ -121,7 +121,7 @@ tags: "标签1, 标签2"
 ## 本地图片放哪里
 
 ```
-dsyou-content/
+shiyou-content/
 ├── blog/
 │   ├── 我的文章.mdx
 │   └── images/
@@ -134,14 +134,14 @@ dsyou-content/
 
 > 免责声明：本文仅为个人观点分享，不构成任何投资建议。股市有风险，投资需谨慎。
 
-- 实现位于 dsyou 仓库的 `src/components/posts/base/PostCopyright.astro`。
+- 实现位于 shiyou 仓库的 `src/components/posts/base/PostCopyright.astro`。
 - **作者无需在文章中手动添加**，也不需要做任何操作。
-- 如需修改文案，请改 dsyou 仓库中的上述组件。
+- 如需修改文案，请改 shiyou 仓库中的上述组件。
 
 ## 目录结构
 
 ```
-dsyou-content/
+shiyou-content/
 ├── blog/
 │   ├── 我的文章.mdx
 │   └── images/
@@ -155,7 +155,7 @@ dsyou-content/
 - `publishedAt` 用 `YYYY-MM-DD` 格式
 - `tags` 用英文逗号或中文逗号分隔多个标签
 - 删除文章 = 删除对应文件并推送
-- **不要在本仓库编辑 `src/content/` 相关文件**（本仓库没有这些文件；网站构建产物由 dsyou 仓库生成）
+- **不要在本仓库编辑 `src/content/` 相关文件**（本仓库没有这些文件；网站构建产物由 shiyou 仓库生成）
 
 ## 已知限制
 
